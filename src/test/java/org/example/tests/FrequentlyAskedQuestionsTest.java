@@ -5,7 +5,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.example.screen.MainScreenPage;
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertArrayEquals;
 
 public class FrequentlyAskedQuestionsTest {
 
@@ -33,7 +34,7 @@ public class FrequentlyAskedQuestionsTest {
                 "Да, обязательно. Всем самокатов! И Москве, и Московской области."
         };
         //Сравнить ответы
-        assertEquals(expectedAnswers,actualAnswers);
+        assertArrayEquals(expectedAnswers,actualAnswers);
 
     }
     @After
