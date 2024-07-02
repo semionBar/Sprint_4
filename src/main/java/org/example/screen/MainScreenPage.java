@@ -3,24 +3,22 @@ package org.example.screen;
 import org.example.model.OrderModel;
 import org.example.model.UIElementModel;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class MainScreenPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     //Кнопка "Заказать" в хэдэре
-    private By headerOrderButton = By.xpath(".//div[contains(@class,'Header_Header')]//button[text()='Заказать']");
+    private final By headerOrderButton = By.xpath(".//div[contains(@class,'Header_Header')]//button[text()='Заказать']");
 
     //Кнопка "Заказать" в roadmap
-    private By roadmapOrderButton = By.xpath(".//div[contains(@class,'Home_ThirdPart')]//button");
+    private final By roadmapOrderButton = By.xpath(".//div[contains(@class,'Home_ThirdPart')]//button");
 
     //FAQ вопросы
-    private By frequentlyAskedQuestions = By.xpath(".//div[@class='accordion__item']//div[@class='accordion__button']");
+    private final By frequentlyAskedQuestions = By.xpath(".//div[@class='accordion__item']//div[@class='accordion__button']");
 
     //FAQ ответы
-    private By frequentlyAskedQuestionsAnswers = By.xpath(".//div[@class='accordion__item']/div[@class='accordion__panel']");
+    private final By frequentlyAskedQuestionsAnswers = By.xpath(".//div[@class='accordion__item']/div[@class='accordion__panel']");
 
 
     public MainScreenPage(WebDriver driver) {

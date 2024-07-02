@@ -71,7 +71,7 @@ public class MakeOrderTest {
         //Получить сообщение из диалога и сравнить с ожидаемым
         SuccessDialogPageFragment objSuccessDialog = new SuccessDialogPageFragment(driver);
         String successMessage = objSuccessDialog.getMessage();
-        String regex = "Заказ оформлен\nНомер заказа: \\d{5,7}.  Запишите его:\nпригодится, чтобы отслеживать статус";
+        String regex = "Заказ оформлен\nНомер заказа: \\d{5,7}. {2}Запишите его:\nпригодится, чтобы отслеживать статус";
         assertTrue("Фактическое сообщение \"" + successMessage + "\" не соответствует regex: \"" + regex+"\"",successMessage.matches(regex));
 
     }

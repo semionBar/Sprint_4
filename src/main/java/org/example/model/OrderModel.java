@@ -1,10 +1,7 @@
 package org.example.model;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.devtools.v85.layertree.model.StickyPositionConstraint;
 
 public class OrderModel {
-    private WebDriver driver;
     private final String name;
     private final String surname;
     private final String address;
