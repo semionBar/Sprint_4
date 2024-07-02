@@ -1,4 +1,4 @@
-package org.example.tests.order;
+package org.example.order;
 
 import org.example.model.OrderModel;
 import org.junit.After;
