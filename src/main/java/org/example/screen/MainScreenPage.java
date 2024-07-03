@@ -1,6 +1,5 @@
 package org.example.screen;
 
-import dev.failsafe.internal.util.Assert;
 import org.example.model.OrderModel;
 import org.example.model.UIElementModel;
 import org.openqa.selenium.By;
