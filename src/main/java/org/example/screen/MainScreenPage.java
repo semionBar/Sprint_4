@@ -42,16 +42,17 @@ public class MainScreenPage {
         }
     }
 
-    public int getQuestionsCount() {
-        return driver.findElements(frequentlyAskedQuestions).size();
-    }
-
     public void clickOnQuestion(int index) {
         UIElementModel.scrollToElement(driver, driver.findElements(frequentlyAskedQuestions).get(index));
         driver.findElements(frequentlyAskedQuestions).get(index).click();
     }
 
+    public void checkIsAnswerDisplayed(int index) {
+        driver.findElements(frequentlyAskedQuestionsAnswers).get(index).isDisplayed();
+    }
+
     public String getAnswerText(int index) {
+        checkIsAnswerDisplayed(index);
         return driver.findElements(frequentlyAskedQuestionsAnswers).get(index).getText();
     }
 
@@ -59,14 +60,4 @@ public class MainScreenPage {
         clickOnQuestion(index);
         return getAnswerText(index);
     }
-
-    public String[] getAnswersArray() {
-        String[] answers = new String[getQuestionsCount()];
-        for (int i = 0; i < getQuestionsCount(); i++) {
-            answers[i] = getAnswerOfQuestion(i);
-        }
-        return answers;
-    }
-
-
 }
