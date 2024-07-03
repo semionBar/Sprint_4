@@ -42,7 +42,7 @@ public class FrequentlyAskedQuestionsTest {
         driver.get("https://qa-scooter.praktikum-services.ru/");
 
         MainScreenPage objMainScreen = new MainScreenPage(driver);
-        //Получить массив ответов
+
         String actualAnswer = objMainScreen.getAnswerOfQuestion(indexOfAnswer);
         //Сравнить ответы
         assertEquals(expectedAnswer,actualAnswer);

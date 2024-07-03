@@ -1,5 +1,6 @@
 package org.example.screen;
 
+import dev.failsafe.internal.util.Assert;
 import org.example.model.OrderModel;
 import org.example.model.UIElementModel;
 import org.openqa.selenium.By;
@@ -47,13 +48,18 @@ public class MainScreenPage {
         driver.findElements(frequentlyAskedQuestions).get(index).click();
     }
 
-    public void checkIsAnswerDisplayed(int index) {
-        driver.findElements(frequentlyAskedQuestionsAnswers).get(index).isDisplayed();
+    public boolean checkIsAnswerDisplayed(int index) {
+        return driver.findElements(frequentlyAskedQuestionsAnswers).get(index).isDisplayed();
     }
 
     public String getAnswerText(int index) {
-        checkIsAnswerDisplayed(index);
-        return driver.findElements(frequentlyAskedQuestionsAnswers).get(index).getText();
+
+        if (checkIsAnswerDisplayed(index)) {
+            return driver.findElements(frequentlyAskedQuestionsAnswers).get(index).getText();
+        }
+        else {
+            return "Ошибка! Элемент не отображается на экране!";
+        }
     }
 
     public String getAnswerOfQuestion(int index) {
